@@ -32,6 +32,12 @@ steps:
   displayName: 'Write build info'
   workingDirectory: $(wwwrootDir)
 
+- task: Application security testing@2020
+  inputs:
+    projectName: 'Tailspin.SpaceGame.Web'
+    enableSastScan: true
+    enableDependencyScan: false
+
 - task: DotNetCoreCLI@2
   displayName: 'Restore project dependencies'
   inputs:
